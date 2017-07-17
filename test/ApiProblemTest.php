@@ -127,13 +127,6 @@ class ApiProblemTest extends PHPUnit_Framework_TestCase
         $this->assertDetails(['instance' => 'http://foobar.com']);
     }
 
-    public function testTryToSetInvalidProtectedDetailObject()
-    {
-        $this->setExpectedException(\PHPUnit_Framework_Error::class);
-
-        $this->apiProblem->addDetail('status', 'invalid-status');
-    }
-
     public function testTryToSetProtectedDetailObject()
     {
         $this->apiProblem->addDetail('status', new StatusCode(500));
